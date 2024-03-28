@@ -2,6 +2,7 @@
 using ManHinhChinh.Service;
 using ManHinhChinh.XuLy;
 using System.Data.SqlClient;
+using System.Media;
 
 namespace Form_DangNhap_Dangky_QMK
 {
@@ -80,6 +81,7 @@ namespace Form_DangNhap_Dangky_QMK
             }
             catch (ArgumentException)
             {
+                SystemSounds.Exclamation.Play();
                 MessageBox.Show("Tên tài khoản không hợp lệ!");
             }
 
@@ -136,7 +138,8 @@ namespace Form_DangNhap_Dangky_QMK
         
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
         {
-            string deleteQuery = "DELETE FROM TamGhiNho";
+            string tenTaiKhoan = txt_TenTaiKhoan.Text;
+            string deleteQuery = "DELETE FROM TamGhiNho WHERE TenTaiKhoan = '"+tenTaiKhoan+"'";
 
             using (SqlConnection connection = new SqlConnection(Connection.stringConnection))
             {
@@ -147,25 +150,35 @@ namespace Form_DangNhap_Dangky_QMK
         }
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
-            if (radioButton1.Checked)
+            try
             {
-                string tenTaiKhoan = txt_TenTaiKhoan.Text;
-                string matKhau = txt_MatKhau.Text;
-
-                if (!string.IsNullOrEmpty(tenTaiKhoan) && !string.IsNullOrEmpty(matKhau))
+                if (radioButton1.Checked)
                 {
+                    string tenTaiKhoan = txt_TenTaiKhoan.Text;
+                    string matKhau = txt_MatKhau.Text;
                     using (SqlConnection connection = new SqlConnection(Connection.stringConnection))
                     {
-                        connection.Open();
-                        string insertQuery = "INSERT INTO TamGhiNho (TenTaiKhoan, MatKhau) VALUES (@TenTaiKhoan, @MatKhau)";
+                        connection.Open(); // Mở kết nối đến cơ sở dữ liệu
+
+                        string insertQuery = "DELETE FROM TamGhiNho ; INSERT INTO TamGhiNho (TenTaiKhoan, MatKhau) VALUES (@TenTaiKhoan, @MatKhau)";
                         SqlCommand insertCommand = new SqlCommand(insertQuery, connection);
                         insertCommand.Parameters.AddWithValue("@TenTaiKhoan", tenTaiKhoan);
                         insertCommand.Parameters.AddWithValue("@MatKhau", matKhau);
                         insertCommand.ExecuteNonQuery();
+
+                        // Các thao tác khác trên cơ sở dữ liệu (nếu có)
+
+                        connection.Close(); // Đóng kết nối sau khi hoàn thành
                     }
+  
                 }
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi ghi nhớ: " + ex.Message);
+            }
         }
+
         private void LoadDataFromTamGhiNho()
         {
             using (SqlConnection connection = new SqlConnection(Connection.stringConnection))

@@ -9,14 +9,14 @@ namespace ManHinhChinh.Service
 
         private JObject data;
         private bool isLoggedIn;
-
+        public string connectionString = Connection.stringConnection;
 
 
         public bool KiemTraDangNhap(string username, string password)
         {
             try
             {
-                using (SqlConnection connection = new SqlConnection(Connection.stringConnection))
+                using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     // Mở kết nối đến cơ sở dữ liệu
                     connection.Open();
@@ -61,7 +61,7 @@ namespace ManHinhChinh.Service
 
         public bool DoiMatKhau(string username, string oldPassword, string newPassword)
         {
-            using (SqlConnection connection = new SqlConnection(Connection.stringConnection"))
+            using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 // Mở kết nối đến cơ sở dữ liệu
                 connection.Open();

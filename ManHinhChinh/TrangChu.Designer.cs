@@ -40,7 +40,7 @@
             pictureBox7 = new PictureBox();
             button_Dangxuat = new Button();
             button_Thongtincanhan = new Button();
-            button6 = new Button();
+            btn_baocao = new Button();
             button_Doimatkhau = new Button();
             tableLayoutPanel5 = new TableLayoutPanel();
             pictureBox6 = new PictureBox();
@@ -57,9 +57,7 @@
             pictureBox12 = new PictureBox();
             tableLayoutPanel1 = new TableLayoutPanel();
             pictureBox1 = new PictureBox();
-            dataGridView1 = new DataGridView();
             pictureBox2 = new PictureBox();
-            pictureBox4 = new PictureBox();
             label1 = new Label();
             button3TongHop = new Button();
             button2YeuCau = new Button();
@@ -69,6 +67,9 @@
             pictureBox8 = new PictureBox();
             label2 = new Label();
             pictureBox13 = new PictureBox();
+            pictureBox14 = new PictureBox();
+            pictureBox4 = new PictureBox();
+            dataGridView1 = new DataGridView();
             tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             tableLayoutPanel6.SuspendLayout();
@@ -87,11 +88,12 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox12).BeginInit();
             tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox8).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox13).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox14).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // button3ADMIN
@@ -226,21 +228,21 @@
             button_Thongtincanhan.UseVisualStyleBackColor = true;
             button_Thongtincanhan.Click += button5_Click_1;
             // 
-            // button6
+            // btn_baocao
             // 
-            button6.Location = new Point(67, 3);
-            button6.Name = "button6";
-            button6.Size = new Size(216, 53);
-            button6.TabIndex = 62;
-            button6.Text = "Báo cáo";
-            button6.UseVisualStyleBackColor = true;
-            button6.Click += button6_Click_1;
+            btn_baocao.Location = new Point(67, 3);
+            btn_baocao.Name = "btn_baocao";
+            btn_baocao.Size = new Size(216, 53);
+            btn_baocao.TabIndex = 62;
+            btn_baocao.Text = "Báo cáo";
+            btn_baocao.UseVisualStyleBackColor = true;
+            btn_baocao.Click += btn_baocao_Click;
             // 
             // button_Doimatkhau
             // 
             button_Doimatkhau.Location = new Point(67, 3);
             button_Doimatkhau.Name = "button_Doimatkhau";
-            button_Doimatkhau.Size = new Size(217, 53);
+            button_Doimatkhau.Size = new Size(216, 53);
             button_Doimatkhau.TabIndex = 62;
             button_Doimatkhau.Text = "Đổi mật khẩu";
             button_Doimatkhau.UseVisualStyleBackColor = true;
@@ -408,7 +410,7 @@
             tableLayoutPanel12.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 22.4F));
             tableLayoutPanel12.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 77.6F));
             tableLayoutPanel12.Controls.Add(pictureBox12, 0, 0);
-            tableLayoutPanel12.Controls.Add(button6, 1, 0);
+            tableLayoutPanel12.Controls.Add(btn_baocao, 1, 0);
             tableLayoutPanel12.Location = new Point(8, 364);
             tableLayoutPanel12.Name = "tableLayoutPanel12";
             tableLayoutPanel12.RowCount = 1;
@@ -460,15 +462,6 @@
             pictureBox1.TabIndex = 59;
             pictureBox1.TabStop = false;
             // 
-            // dataGridView1
-            // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(301, 99);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(894, 589);
-            dataGridView1.TabIndex = 75;
-            // 
             // pictureBox2
             // 
             pictureBox2.AccessibleRole = AccessibleRole.Grip;
@@ -483,26 +476,11 @@
             pictureBox2.TabIndex = 76;
             pictureBox2.TabStop = false;
             // 
-            // pictureBox4
-            // 
-            pictureBox4.AccessibleRole = AccessibleRole.Grip;
-            pictureBox4.Anchor = AnchorStyles.None;
-            pictureBox4.BackgroundImageLayout = ImageLayout.Center;
-            pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
-            pictureBox4.Location = new Point(1162, 1);
-            pictureBox4.Margin = new Padding(3, 4, 3, 4);
-            pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(31, 27);
-            pictureBox4.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox4.TabIndex = 77;
-            pictureBox4.TabStop = false;
-            pictureBox4.Click += pictureBox4_Click;
-            // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            label1.Location = new Point(1015, 47);
+            label1.Location = new Point(998, 47);
             label1.Name = "label1";
             label1.Size = new Size(126, 28);
             label1.TabIndex = 78;
@@ -514,7 +492,7 @@
             button3TongHop.Name = "button3TongHop";
             button3TongHop.Size = new Size(217, 53);
             button3TongHop.TabIndex = 83;
-            button3TongHop.Text = "Xem lịch sử thông báo";
+            button3TongHop.Text = "Các thiết bị đang bảo trì";
             button3TongHop.UseVisualStyleBackColor = true;
             button3TongHop.Visible = false;
             button3TongHop.Click += button3TongHop_Click;
@@ -568,7 +546,7 @@
             pictureBox8.Anchor = AnchorStyles.None;
             pictureBox8.BackgroundImageLayout = ImageLayout.Center;
             pictureBox8.Image = (Image)resources.GetObject("pictureBox8.Image");
-            pictureBox8.Location = new Point(941, 16);
+            pictureBox8.Location = new Point(924, 16);
             pictureBox8.Margin = new Padding(3, 4, 3, 4);
             pictureBox8.Name = "pictureBox8";
             pictureBox8.Size = new Size(58, 72);
@@ -580,7 +558,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Times New Roman", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(1007, 16);
+            label2.Location = new Point(990, 16);
             label2.Name = "label2";
             label2.Size = new Size(134, 31);
             label2.TabIndex = 88;
@@ -600,12 +578,55 @@
             pictureBox13.TabIndex = 89;
             pictureBox13.TabStop = false;
             // 
+            // pictureBox14
+            // 
+            pictureBox14.AccessibleRole = AccessibleRole.Grip;
+            pictureBox14.Anchor = AnchorStyles.None;
+            pictureBox14.BackgroundImageLayout = ImageLayout.Center;
+            pictureBox14.Image = (Image)resources.GetObject("pictureBox14.Image");
+            pictureBox14.Location = new Point(301, 115);
+            pictureBox14.Margin = new Padding(3, 4, 3, 4);
+            pictureBox14.Name = "pictureBox14";
+            pictureBox14.Size = new Size(878, 564);
+            pictureBox14.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox14.TabIndex = 115;
+            pictureBox14.TabStop = false;
+            // 
+            // pictureBox4
+            // 
+            pictureBox4.AccessibleRole = AccessibleRole.Grip;
+            pictureBox4.BackgroundImageLayout = ImageLayout.Center;
+            pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
+            pictureBox4.Location = new Point(1122, 13);
+            pictureBox4.Margin = new Padding(3, 4, 3, 4);
+            pictureBox4.Name = "pictureBox4";
+            pictureBox4.Size = new Size(66, 62);
+            pictureBox4.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox4.TabIndex = 116;
+            pictureBox4.TabStop = false;
+            pictureBox4.Visible = false;
+            pictureBox4.Click += pictureBox4_Click_1;
+            // 
+            // dataGridView1
+            // 
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Location = new Point(866, 70);
+            dataGridView1.Margin = new Padding(3, 4, 3, 4);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.RowHeadersWidth = 51;
+            dataGridView1.Size = new Size(322, 161);
+            dataGridView1.TabIndex = 117;
+            dataGridView1.Visible = false;
+            // 
             // TrangChu
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(255, 224, 192);
             ClientSize = new Size(1200, 692);
+            Controls.Add(dataGridView1);
+            Controls.Add(pictureBox4);
             Controls.Add(pictureBox13);
             Controls.Add(pictureBox8);
             Controls.Add(button3ADMIN);
@@ -615,9 +636,7 @@
             Controls.Add(button1YeuCau);
             Controls.Add(button1TraCuu);
             Controls.Add(label1);
-            Controls.Add(pictureBox4);
             Controls.Add(pictureBox2);
-            Controls.Add(dataGridView1);
             Controls.Add(tableLayoutPanel1);
             Controls.Add(tableLayoutPanel4);
             Controls.Add(tableLayoutPanel9);
@@ -627,6 +646,7 @@
             Controls.Add(tableLayoutPanel5);
             Controls.Add(tableLayoutPanel6);
             Controls.Add(label2);
+            Controls.Add(pictureBox14);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "TrangChu";
             Text = "TrangChu";
@@ -649,11 +669,12 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox12).EndInit();
             tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox8).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox13).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox14).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -671,7 +692,7 @@
         private Button button_Dangxuat;
         private PictureBox pictureBox7;
         private Button button5;
-        private Button button6;
+        private Button btn_baocao;
         private Button button_Doimatkhau;
         private TableLayoutPanel tableLayoutPanel5;
         private PictureBox pictureBox6;
@@ -687,9 +708,7 @@
         private PictureBox pictureBox12;
         private TableLayoutPanel tableLayoutPanel1;
         private PictureBox pictureBox1;
-        private DataGridView dataGridView1;
         private PictureBox pictureBox2;
-        private PictureBox pictureBox4;
         private Label label1;
         private Button button3ADMIN;
         private Button button3TongHop;
@@ -703,5 +722,8 @@
         private PictureBox pictureBox8;
         private Label label2;
         private PictureBox pictureBox13;
+        private PictureBox pictureBox14;
+        private PictureBox pictureBox4;
+        private DataGridView dataGridView1;
     }
 }

@@ -210,7 +210,7 @@
             // pictureBox4
             // 
             pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
-            pictureBox4.Location = new Point(12, 72);
+            pictureBox4.Location = new Point(12, 60);
             pictureBox4.Name = "pictureBox4";
             pictureBox4.Size = new Size(242, 252);
             pictureBox4.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -222,7 +222,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(255, 224, 192);
-            ClientSize = new Size(784, 411);
+            ClientSize = new Size(696, 345);
             Controls.Add(pictureBox4);
             Controls.Add(pictureBox3);
             Controls.Add(pictureBox2);

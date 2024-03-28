@@ -88,7 +88,7 @@ namespace ManHinhChinh
                 // Thực hiện truy vấn SQL để lấy thông tin từ bảng ThietBi
                 string query = @"SELECT MaThietBi, TenThietBi, TinhTrang, NgayCapNhatNhanVien, ThongBaoGiaoVien, NgayCapNhatGiaoVien
                          FROM ThietBi
-                         WHERE MaPhongHoc = @MaPhongHoc AND TinhTrang <> 'Hoạt động'";
+                         WHERE MaPhongHoc = @MaPhongHoc AND TinhTrang <> N'Hoạt động'";
 
                 // Mở kết nối
                 using (SqlConnection connection = new SqlConnection(connectionString))
@@ -120,7 +120,19 @@ namespace ManHinhChinh
                         string thongBaoGiaoVien = reader["ThongBaoGiaoVien"].ToString();
                         string ngayCapNhatGiaoVien = reader["NgayCapNhatGiaoVien"].ToString();
 
-                        dataGridView1.Rows.Add(tenThietBi, tinhTrang, ngayCapNhatNhanVien, thongBaoGiaoVien, ngayCapNhatGiaoVien);
+                        int rowIndex = dataGridView1.Rows.Add(tenThietBi, tinhTrang, ngayCapNhatNhanVien, thongBaoGiaoVien, ngayCapNhatGiaoVien);
+                        // Kiểm tra nếu cột "Tình Trạng" có giá trị là "Warning", thì đổi màu văn bản của ô đó thành màu đỏ
+                        if (tinhTrang == "Warning")
+                        {
+                            dataGridView1.Rows[dataGridView1.Rows.Count - 1].Cells["TinhTrang"].Style.ForeColor = Color.Red;
+                        }
+
+                        // Kiểm tra nếu tình trạng là "Warning", thay đổi màu nền của hàng đó
+                        if (tinhTrang == "Warning")
+                        {
+                            dataGridView1.Rows[rowIndex].DefaultCellStyle.BackColor = Color.Red;
+                            dataGridView1.Rows[rowIndex].DefaultCellStyle.ForeColor = Color.White;
+                        }
                     }
 
                     // Đóng kết nối

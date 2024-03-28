@@ -1,5 +1,6 @@
 ﻿using Form_DangNhap_Dangky_QMK;
-using ManHinhChinh.QuanLyThietBi;
+using ManHinhChinh.Baocao;
+using ManHinhChinh.QuanLyThietBivaPhanMem;
 using ManHinhChinh.TaiKhoan;
 using System;
 using System.Collections.Generic;
@@ -36,7 +37,14 @@ namespace ManHinhChinh
             doiMatKhau.StartPosition = FormStartPosition.Manual;
             doiMatKhau.Left = this.Left + 263;
             doiMatKhau.Top = this.Top + 105;
-
+            // Ẩn tất cả các form khác trừ form TrangChu
+            foreach (Form frm in Application.OpenForms)
+            {
+                if (frm.Name != "TrangAdmin")
+                {
+                    frm.Hide();
+                }
+            }
             // Hiển thị form DoiMatKhau
             doiMatKhau.Show();
         }
@@ -48,16 +56,32 @@ namespace ManHinhChinh
             chiTietThietBi.StartPosition = FormStartPosition.Manual;
             chiTietThietBi.Left = this.Left + 263;
             chiTietThietBi.Top = this.Top + 105;
+            // Ẩn tất cả các form khác trừ form TrangChu
+            foreach (Form frm in Application.OpenForms)
+            {
+                if (frm.Name != "TrangAdmin")
+                {
+                    frm.Hide();
+                }
+            }
             chiTietThietBi.Show();
         }
 
         private void button2TraCuu_Click(object sender, EventArgs e)
         {
-            ChiTietPhanMem chiTietPhanMem = new ChiTietPhanMem();
+            QuanLyPhanMem chiTietPhanMem = new QuanLyPhanMem();
             // Xác định vị trí xuất hiện trên form TrangChu
             chiTietPhanMem.StartPosition = FormStartPosition.Manual;
             chiTietPhanMem.Left = this.Left + 263;
             chiTietPhanMem.Top = this.Top + 105;
+            // Ẩn tất cả các form khác trừ form TrangChu
+            foreach (Form frm in Application.OpenForms)
+            {
+                if (frm.Name != "TrangAdmin")
+                {
+                    frm.Hide();
+                }
+            }
             chiTietPhanMem.Show();
         }
 
@@ -71,6 +95,14 @@ namespace ManHinhChinh
                 tongHopYeuCau.StartPosition = FormStartPosition.Manual;
                 tongHopYeuCau.Left = this.Left + 263;
                 tongHopYeuCau.Top = this.Top + 105;
+                // Ẩn tất cả các form khác trừ form TrangChu
+                foreach (Form frm in Application.OpenForms)
+                {
+                    if (frm.Name != "TrangAdmin")
+                    {
+                        frm.Hide();
+                    }
+                }
                 tongHopYeuCau.Show();
             };
         }
@@ -87,6 +119,14 @@ namespace ManHinhChinh
             quanLyTaiKhoan.StartPosition = FormStartPosition.Manual;
             quanLyTaiKhoan.Left = this.Left + 263;
             quanLyTaiKhoan.Top = this.Top + 105;
+            // Ẩn tất cả các form khác trừ form TrangChu
+            foreach (Form frm in Application.OpenForms)
+            {
+                if (frm.Name != "TrangAdmin")
+                {
+                    frm.Hide();
+                }
+            }
             quanLyTaiKhoan.Show();
         }
 
@@ -99,19 +139,51 @@ namespace ManHinhChinh
             quyenTruyCap.StartPosition = FormStartPosition.Manual;
             quyenTruyCap.Left = this.Left + 263;
             quyenTruyCap.Top = this.Top + 105;
-
+            // Ẩn tất cả các form khác trừ form TrangChu
+            foreach (Form frm in Application.OpenForms)
+            {
+                if (frm.Name != "TrangAdmin")
+                {
+                    frm.Hide();
+                }
+            }
             // Hiển thị form thongTinCaNhan
             quyenTruyCap.Show();
         }
 
         private void button_Dangxuat_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
             // Khởi tạo form 
             DangNhap dangNhap = new DangNhap();
 
             // Hiển thị form 
             dangNhap.Show();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            // Khởi tạo form
+            Baocaothietbi baocao = new Baocaothietbi();
+            // Xác định vị trí xuất hiện trên form TrangChu
+            baocao.StartPosition = FormStartPosition.Manual;
+            baocao.Left = this.Left + 263;
+            baocao.Top = this.Top + 105;
+            // Ẩn tất cả các form khác trừ form TrangChu
+            foreach (Form frm in Application.OpenForms)
+            {
+                if (frm.Name != "TrangAdmin")
+                {
+                    frm.Hide();
+                }
+            }
+            // Hiển thị form thongTinCaNhan
+            baocao.Show();
+        }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

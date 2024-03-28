@@ -22,7 +22,7 @@ namespace ManHinhChinh.TaiKhoan
             dataLoad();
             LoadComboBoxData();
         }
-        private  string ConnectionString = Connection.stringConnection;
+        private string ConnectionString = Connection.stringConnection;
 
         //xử lý button
         private void button_Them_Click(object sender, EventArgs e)
@@ -424,6 +424,40 @@ namespace ManHinhChinh.TaiKhoan
             }
         }
 
+        private void button_Them_MouseHover(object sender, EventArgs e)
+        {
+            Button button_Them = sender as Button;
+            button_Them.BackColor = Color.White;
+        }
 
+        private void button_Them_MouseLeave(object sender, EventArgs e)
+        {
+            Button button_Them = sender as Button;
+            button_Them.BackColor = Color.Teal;
+        }
+
+        private void button_Sua_MouseHover(object sender, EventArgs e)
+        {
+            Button button_Sua = sender as Button;
+            button_Sua.BackColor = Color.White;
+        }
+
+        private void button_Sua_MouseLeave(object sender, EventArgs e)
+        {
+            Button button_Sua = sender as Button;
+            button_Sua.BackColor = Color.Green;
+        }
+
+        private void button_Xoa_MouseHover(object sender, EventArgs e)
+        {
+            Button button_Xoa = sender as Button;
+            button_Xoa.BackColor = Color.White;
+        }
+
+        private void button_Xoa_MouseLeave(object sender, EventArgs e)
+        {
+            Button button_Xoa = sender as Button;
+            button_Xoa.BackColor = Color.Red;
+        }
     }
 }

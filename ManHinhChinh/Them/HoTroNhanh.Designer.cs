@@ -42,11 +42,13 @@
             // 
             // dataGridView1
             // 
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(29, 111);
+            dataGridView1.Location = new Point(25, 83);
+            dataGridView1.Margin = new Padding(3, 2, 3, 2);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(415, 357);
+            dataGridView1.Size = new Size(363, 268);
             dataGridView1.TabIndex = 0;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
@@ -54,9 +56,9 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Times New Roman", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            label2.Location = new Point(109, 28);
+            label2.Location = new Point(95, 21);
             label2.Name = "label2";
-            label2.Size = new Size(142, 23);
+            label2.Size = new Size(115, 19);
             label2.TabIndex = 41;
             label2.Text = "ID Mã Tòa Nhà";
             // 
@@ -64,28 +66,28 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Times New Roman", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            label1.Location = new Point(29, 79);
+            label1.Location = new Point(25, 59);
             label1.Name = "label1";
-            label1.Size = new Size(340, 23);
+            label1.Size = new Size(275, 19);
             label1.TabIndex = 42;
             label1.Text = "Thông tin nhân viên chịu trách nhiệm :";
             // 
             // comboBox1
             // 
             comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(257, 23);
+            comboBox1.Location = new Point(225, 17);
+            comboBox1.Margin = new Padding(3, 2, 3, 2);
             comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(151, 28);
+            comboBox1.Size = new Size(133, 23);
             comboBox1.TabIndex = 43;
             comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(426, 13);
-            pictureBox1.Margin = new Padding(3, 4, 3, 4);
+            pictureBox1.Location = new Point(373, 10);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(38, 33);
+            pictureBox1.Size = new Size(33, 25);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 44;
             pictureBox1.TabStop = false;
@@ -94,20 +96,19 @@
             // pictureBox2
             // 
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(29, -3);
-            pictureBox2.Margin = new Padding(3, 4, 3, 4);
+            pictureBox2.Location = new Point(25, -2);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(73, 77);
+            pictureBox2.Size = new Size(64, 58);
             pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox2.TabIndex = 45;
             pictureBox2.TabStop = false;
             // 
             // HoTroNhanh
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(255, 224, 192);
-            ClientSize = new Size(473, 481);
+            ClientSize = new Size(414, 361);
             Controls.Add(pictureBox1);
             Controls.Add(comboBox1);
             Controls.Add(label1);
@@ -115,6 +116,7 @@
             Controls.Add(dataGridView1);
             Controls.Add(pictureBox2);
             Location = new Point(301, 98);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "HoTroNhanh";
             Text = "HoTroNhanh";
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();

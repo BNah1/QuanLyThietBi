@@ -1,21 +1,56 @@
 ﻿using Form_DangNhap_Dangky_QMK;
-using ManHinhChinh.QuanLyThietBi;
-using WindowsFormsApp7;
-using WindowsFormsApp8;
+using ManHinhChinh.Baocao;
+using ManHinhChinh.QuanLyThietBivaPhanMem;
+using ManHinhChinh.XuLy;
+using System.Data;
+using System.Data.SqlClient;
+using System.Windows.Forms;
+using WindowsFormsApp11;
 using WinFormsApp1;
 
 namespace ManHinhChinh
 {
     public partial class TrangChu : Form
     {
+
         public TrangChu()
         {
             InitializeComponent();
+            label1.Text = DangNhap.TenDangNhap;
         }
 
         private void TrangChu_Load(object sender, EventArgs e)
         {
-            label1.Text = DangNhap.TenDangNhap;
+            using (SqlConnection connection = new SqlConnection(Connection.stringConnection))
+            {
+                connection.Open();
+
+                string selectQuery = "SELECT ThietBi.*, QuyenTruyCapNV.TenTaiKhoan FROM ThietBi " +
+                                     "JOIN PhongHoc ON ThietBi.MaPhongHoc = PhongHoc.MaPhongHoc " +
+                                     "JOIN Tang ON PhongHoc.MaTang = Tang.MaTang " +
+                                     "JOIN ToaNha ON Tang.MaToaNha = ToaNha.MaToaNha " +
+                                     "JOIN QuyenTruyCapNV ON ToaNha.MaToaNha = QuyenTruyCapNV.MaToaNha " +
+                                     "WHERE QuyenTruyCapNV.TenTaiKhoan = @TenTaiKhoan";
+                SqlCommand selectCommand = new SqlCommand(selectQuery, connection);
+                selectCommand.Parameters.AddWithValue("@TenTaiKhoan", DangNhap.TenDangNhap);
+
+                SqlDataReader reader = selectCommand.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    string tinhTrang = reader["TinhTrang"].ToString();
+
+                    // Kiểm tra điều kiện TinhTrang khác 'Hoạt động'
+                    if (tinhTrang != "Hoạt động")
+                    {
+                        // Đặt Visible của PictureBox thành true
+                        pictureBox4.Visible = true;
+                    }
+                }
+
+                reader.Close();
+                connection.Close();
+            }
         }
 
         private void đổiMậtKhẩuToolStripMenuItem_Click(object sender, EventArgs e)
@@ -108,7 +143,14 @@ namespace ManHinhChinh
             thongTinCaNhan.StartPosition = FormStartPosition.Manual;
             thongTinCaNhan.Left = this.Left + 263;
             thongTinCaNhan.Top = this.Top + 105;
-
+            // Ẩn tất cả các form khác trừ form TrangChu
+            foreach (Form frm in Application.OpenForms)
+            {
+                if (frm.Name != "TrangChu")
+                {
+                    frm.Hide();
+                }
+            }
             // Hiển thị form thongTinCaNhan
             thongTinCaNhan.Show();
         }
@@ -122,7 +164,14 @@ namespace ManHinhChinh
             doiMatKhau.StartPosition = FormStartPosition.Manual;
             doiMatKhau.Left = this.Left + 263;
             doiMatKhau.Top = this.Top + 105;
-
+            // Ẩn tất cả các form khác trừ form TrangChu
+            foreach (Form frm in Application.OpenForms)
+            {
+                if (frm.Name != "TrangChu")
+                {
+                    frm.Hide();
+                }
+            }
             // Hiển thị form DoiMatKhau
             doiMatKhau.Show();
         }
@@ -139,7 +188,7 @@ namespace ManHinhChinh
 
         private void button_Dangxuat_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
             // Khởi tạo form 
             DangNhap dangNhap = new DangNhap();
 
@@ -154,6 +203,14 @@ namespace ManHinhChinh
             chiTietThietBi.StartPosition = FormStartPosition.Manual;
             chiTietThietBi.Left = this.Left + 263;
             chiTietThietBi.Top = this.Top + 105;
+            // Ẩn tất cả các form khác trừ form TrangChu
+            foreach (Form frm in Application.OpenForms)
+            {
+                if (frm.Name != "TrangChu")
+                {
+                    frm.Hide();
+                }
+            }
             chiTietThietBi.Show();
         }
 
@@ -194,6 +251,14 @@ namespace ManHinhChinh
             hoTroNhanh.StartPosition = FormStartPosition.Manual;
             hoTroNhanh.Left = this.Left + 263;
             hoTroNhanh.Top = this.Top + 105;
+            // Ẩn tất cả các form khác trừ form TrangChu
+            foreach (Form frm in Application.OpenForms)
+            {
+                if (frm.Name != "TrangChu")
+                {
+                    frm.Hide();
+                }
+            }
             hoTroNhanh.Show();
         }
 
@@ -204,22 +269,51 @@ namespace ManHinhChinh
             lichSuYeuCau.StartPosition = FormStartPosition.Manual;
             lichSuYeuCau.Left = this.Left + 263;
             lichSuYeuCau.Top = this.Top + 105;
+            // Ẩn tất cả các form khác trừ form TrangChu
+            foreach (Form frm in Application.OpenForms)
+            {
+                if (frm.Name != "TrangChu")
+                {
+                    frm.Hide();
+                }
+            }
             lichSuYeuCau.Show();
         }
 
         private void button2TraCuu_Click(object sender, EventArgs e)
         {
-            ChiTietPhanMem chiTietPhanMem = new ChiTietPhanMem();
+            QuanLyPhanMem chiTietPhanMem = new QuanLyPhanMem();
             // Xác định vị trí xuất hiện trên form TrangChu
             chiTietPhanMem.StartPosition = FormStartPosition.Manual;
             chiTietPhanMem.Left = this.Left + 263;
             chiTietPhanMem.Top = this.Top + 105;
+            // Ẩn tất cả các form khác trừ form TrangChu
+            foreach (Form frm in Application.OpenForms)
+            {
+                if (frm.Name != "TrangChu")
+                {
+                    frm.Hide();
+                }
+            }
             chiTietPhanMem.Show();
         }
 
         private void button3ADMIN_Click_1(object sender, EventArgs e)
         {
-            
+            YeuCauThietBi chiTietPhanMem = new YeuCauThietBi();
+            // Xác định vị trí xuất hiện trên form TrangChu
+            chiTietPhanMem.StartPosition = FormStartPosition.Manual;
+            chiTietPhanMem.Left = this.Left + 263;
+            chiTietPhanMem.Top = this.Top + 105;
+            // Ẩn tất cả các form khác trừ form TrangChu
+            foreach (Form frm in Application.OpenForms)
+            {
+                if (frm.Name != "TrangChu")
+                {
+                    frm.Hide();
+                }
+            }
+            chiTietPhanMem.Show();
         }
 
         private void button_QLTKADMIN_Click(object sender, EventArgs e)
@@ -233,11 +327,6 @@ namespace ManHinhChinh
             this.Close();
         }
 
-        private void button6_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
         private void button1YeuCau_Click(object sender, EventArgs e)
         {
             YeuCauThietBi yeuCauThietBi = new YeuCauThietBi();
@@ -245,7 +334,68 @@ namespace ManHinhChinh
             yeuCauThietBi.StartPosition = FormStartPosition.Manual;
             yeuCauThietBi.Left = this.Left + 263;
             yeuCauThietBi.Top = this.Top + 105;
+            // Ẩn tất cả các form khác trừ form TrangChu
+            foreach (Form frm in Application.OpenForms)
+            {
+                if (frm.Name != "TrangChu")
+                {
+                    frm.Hide();
+                }
+            }
             yeuCauThietBi.Show();
+        }
+
+        private void btn_baocao_Click(object sender, EventArgs e)
+        {
+            if (DangNhap.loaiTaiKhoan == "NhanVien")
+            {
+                Baocaothietbi baocaothietbi = new Baocaothietbi();
+                baocaothietbi.StartPosition = FormStartPosition.Manual;
+                baocaothietbi.Left = this.Left + 263;
+                baocaothietbi.Top = this.Top + 105;
+                // Ẩn tất cả các form khác trừ form TrangChu
+                foreach (Form frm in Application.OpenForms)
+                {
+                    if (frm.Name != "TrangChu")
+                    {
+                        frm.Hide();
+                    }
+                }
+                baocaothietbi.Show();
+            }
+            else
+                MessageBox.Show("Không được quyền truy cập");
+        }
+
+        private void pictureBox4_Click_1(object sender, EventArgs e)
+        {
+            using (SqlConnection connection = new SqlConnection(Connection.stringConnection))
+            {
+                connection.Open();
+
+                string selectQuery = "SELECT PhongHoc.MaPhongHoc, COUNT(*) AS ThietBiCanSuaChua " +
+                                     "FROM ThietBi " +
+                                     "JOIN PhongHoc ON ThietBi.MaPhongHoc = PhongHoc.MaPhongHoc " +
+                                     "JOIN Tang ON PhongHoc.MaTang = Tang.MaTang " +
+                                     "JOIN ToaNha ON Tang.MaToaNha = ToaNha.MaToaNha " +
+                                     "JOIN QuyenTruyCapNV ON ToaNha.MaToaNha = QuyenTruyCapNV.MaToaNha " +
+                                     "WHERE QuyenTruyCapNV.TenTaiKhoan = @TenTaiKhoan " +
+                                     "      AND ThietBi.TinhTrang <> N'Hoạt Động' " +
+                                     "GROUP BY PhongHoc.MaPhongHoc";
+
+                SqlCommand selectCommand = new SqlCommand(selectQuery, connection);
+                selectCommand.Parameters.AddWithValue("@TenTaiKhoan", DangNhap.TenDangNhap);
+
+                SqlDataAdapter dataAdapter = new SqlDataAdapter(selectCommand);
+                DataTable dataTable = new DataTable();
+                dataAdapter.Fill(dataTable);
+
+                dataGridView1.DataSource = dataTable;
+
+                connection.Close();
+            }
+            dataGridView1.Visible = !dataGridView1.Visible;
+
         }
     }
 }

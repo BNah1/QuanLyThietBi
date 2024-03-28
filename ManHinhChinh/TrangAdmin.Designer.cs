@@ -29,16 +29,13 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TrangAdmin));
-            pictureBox13 = new PictureBox();
             pictureBox8 = new PictureBox();
             button3ADMIN = new Button();
             button_Doimatkhau = new Button();
             button2TraCuu = new Button();
             button1TraCuu = new Button();
             label1 = new Label();
-            pictureBox4 = new PictureBox();
             pictureBox2 = new PictureBox();
-            dataGridView1 = new DataGridView();
             tableLayoutPanel4 = new TableLayoutPanel();
             pictureBox5 = new PictureBox();
             tableLayoutPanel9 = new TableLayoutPanel();
@@ -60,11 +57,12 @@
             pictureBox1 = new PictureBox();
             tableLayoutPanel2 = new TableLayoutPanel();
             pictureBox3 = new PictureBox();
-            ((System.ComponentModel.ISupportInitialize)pictureBox13).BeginInit();
+            pictureBox6 = new PictureBox();
+            groupBox1 = new GroupBox();
+            label3 = new Label();
+            pictureBox13 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox8).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             tableLayoutPanel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
             tableLayoutPanel9.SuspendLayout();
@@ -81,21 +79,10 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
+            groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox13).BeginInit();
             SuspendLayout();
-            // 
-            // pictureBox13
-            // 
-            pictureBox13.AccessibleRole = AccessibleRole.Grip;
-            pictureBox13.Anchor = AnchorStyles.None;
-            pictureBox13.BackgroundImageLayout = ImageLayout.Center;
-            pictureBox13.Image = (Image)resources.GetObject("pictureBox13.Image");
-            pictureBox13.Location = new Point(305, 3);
-            pictureBox13.Margin = new Padding(3, 4, 3, 4);
-            pictureBox13.Name = "pictureBox13";
-            pictureBox13.Size = new Size(429, 91);
-            pictureBox13.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox13.TabIndex = 112;
-            pictureBox13.TabStop = false;
             // 
             // pictureBox8
             // 
@@ -103,7 +90,7 @@
             pictureBox8.Anchor = AnchorStyles.None;
             pictureBox8.BackgroundImageLayout = ImageLayout.Center;
             pictureBox8.Image = (Image)resources.GetObject("pictureBox8.Image");
-            pictureBox8.Location = new Point(918, 13);
+            pictureBox8.Location = new Point(438, 10);
             pictureBox8.Margin = new Padding(3, 4, 3, 4);
             pictureBox8.Name = "pictureBox8";
             pictureBox8.Size = new Size(58, 72);
@@ -155,25 +142,11 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            label1.Location = new Point(982, 13);
+            label1.Location = new Point(506, 10);
             label1.Name = "label1";
             label1.Size = new Size(78, 28);
             label1.TabIndex = 102;
             label1.Text = "ADMIN";
-            // 
-            // pictureBox4
-            // 
-            pictureBox4.AccessibleRole = AccessibleRole.Grip;
-            pictureBox4.Anchor = AnchorStyles.None;
-            pictureBox4.BackgroundImageLayout = ImageLayout.Center;
-            pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
-            pictureBox4.Location = new Point(1161, 3);
-            pictureBox4.Margin = new Padding(3, 4, 3, 4);
-            pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(31, 27);
-            pictureBox4.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox4.TabIndex = 101;
-            pictureBox4.TabStop = false;
             // 
             // pictureBox2
             // 
@@ -188,15 +161,6 @@
             pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox2.TabIndex = 100;
             pictureBox2.TabStop = false;
-            // 
-            // dataGridView1
-            // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(302, 101);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(894, 589);
-            dataGridView1.TabIndex = 99;
             // 
             // tableLayoutPanel4
             // 
@@ -293,6 +257,7 @@
             button6.TabIndex = 62;
             button6.Text = "Báo cáo";
             button6.UseVisualStyleBackColor = true;
+            button6.Click += button6_Click;
             // 
             // tableLayoutPanel10
             // 
@@ -479,20 +444,70 @@
             pictureBox3.TabIndex = 59;
             pictureBox3.TabStop = false;
             // 
+            // pictureBox6
+            // 
+            pictureBox6.AccessibleRole = AccessibleRole.Grip;
+            pictureBox6.Anchor = AnchorStyles.None;
+            pictureBox6.BackgroundImageLayout = ImageLayout.Center;
+            pictureBox6.Image = (Image)resources.GetObject("pictureBox6.Image");
+            pictureBox6.Location = new Point(27, 10);
+            pictureBox6.Margin = new Padding(3, 4, 3, 4);
+            pictureBox6.Name = "pictureBox6";
+            pictureBox6.Size = new Size(134, 81);
+            pictureBox6.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox6.TabIndex = 112;
+            pictureBox6.TabStop = false;
+            // 
+            // groupBox1
+            // 
+            groupBox1.BackColor = Color.White;
+            groupBox1.Controls.Add(label3);
+            groupBox1.Controls.Add(pictureBox6);
+            groupBox1.Controls.Add(pictureBox8);
+            groupBox1.Controls.Add(label1);
+            groupBox1.Location = new Point(433, 28);
+            groupBox1.Margin = new Padding(3, 4, 3, 4);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Padding = new Padding(3, 4, 3, 4);
+            groupBox1.Size = new Size(604, 91);
+            groupBox1.TabIndex = 113;
+            groupBox1.TabStop = false;
+            groupBox1.Text = " ";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Times New Roman", 22.2F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            label3.Location = new Point(167, 24);
+            label3.Name = "label3";
+            label3.Size = new Size(265, 43);
+            label3.TabIndex = 113;
+            label3.Text = "Quản lý thiết bị ";
+            // 
+            // pictureBox13
+            // 
+            pictureBox13.AccessibleRole = AccessibleRole.Grip;
+            pictureBox13.Anchor = AnchorStyles.None;
+            pictureBox13.BackgroundImageLayout = ImageLayout.Center;
+            pictureBox13.Image = (Image)resources.GetObject("pictureBox13.Image");
+            pictureBox13.Location = new Point(322, 140);
+            pictureBox13.Margin = new Padding(3, 4, 3, 4);
+            pictureBox13.Name = "pictureBox13";
+            pictureBox13.Size = new Size(857, 537);
+            pictureBox13.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox13.TabIndex = 114;
+            pictureBox13.TabStop = false;
+            // 
             // TrangAdmin
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(255, 192, 128);
             ClientSize = new Size(1200, 692);
+            Controls.Add(groupBox1);
             Controls.Add(tableLayoutPanel2);
             Controls.Add(tableLayoutPanel1);
-            Controls.Add(pictureBox13);
-            Controls.Add(pictureBox8);
-            Controls.Add(label1);
-            Controls.Add(pictureBox4);
             Controls.Add(pictureBox2);
-            Controls.Add(dataGridView1);
             Controls.Add(tableLayoutPanel4);
             Controls.Add(tableLayoutPanel9);
             Controls.Add(tableLayoutPanel12);
@@ -500,14 +515,12 @@
             Controls.Add(tableLayoutPanel11);
             Controls.Add(tableLayoutPanel6);
             Controls.Add(label2);
+            Controls.Add(pictureBox13);
             Name = "TrangAdmin";
             Text = "TrangAdmin";
             Load += TrangAdmin_Load;
-            ((System.ComponentModel.ISupportInitialize)pictureBox13).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox8).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             tableLayoutPanel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
             tableLayoutPanel9.ResumeLayout(false);
@@ -524,22 +537,22 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             tableLayoutPanel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
+            groupBox1.ResumeLayout(false);
+            groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox13).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-
-        private PictureBox pictureBox13;
         private PictureBox pictureBox8;
         private Button button3ADMIN;
         private Button button_Doimatkhau;
         private Button button2TraCuu;
         private Button button1TraCuu;
         private Label label1;
-        private PictureBox pictureBox4;
         private PictureBox pictureBox2;
-        private DataGridView dataGridView1;
         private TableLayoutPanel tableLayoutPanel4;
         private PictureBox pictureBox5;
         private TableLayoutPanel tableLayoutPanel9;
@@ -561,5 +574,9 @@
         private TableLayoutPanel tableLayoutPanel2;
         private PictureBox pictureBox3;
         private Button button1;
+        private PictureBox pictureBox6;
+        private GroupBox groupBox1;
+        private Label label3;
+        private PictureBox pictureBox13;
     }
 }

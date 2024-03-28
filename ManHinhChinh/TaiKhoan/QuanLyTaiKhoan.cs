@@ -320,5 +320,42 @@ namespace ManHinhChinh.TaiKhoan
         {
 
         }
+
+        private void button_Them_MouseHover(object sender, EventArgs e)
+        {
+            System.Windows.Forms.Button button_Them = (System.Windows.Forms.Button)sender;
+            button_Them.BackColor = System.Drawing.Color.White;
+
+        }
+
+        private void button_Them_MouseLeave(object sender, EventArgs e)
+        {
+            System.Windows.Forms.Button button_Them = (System.Windows.Forms.Button)sender;
+            button_Them.BackColor = System.Drawing.Color.Cyan;
+        }
+
+        private void button_Sua_MouseHover(object sender, EventArgs e)
+        {
+            System.Windows.Forms.Button button_Sua = (System.Windows.Forms.Button)sender;
+            button_Sua.BackColor = System.Drawing.Color.White;
+        }
+
+        private void button_Sua_MouseLeave(object sender, EventArgs e)
+        {
+            System.Windows.Forms.Button button_Sua = (System.Windows.Forms.Button)sender;
+            button_Sua.BackColor = System.Drawing.Color.Green;
+        }
+
+        private void button_Xoa_MouseHover(object sender, EventArgs e)
+        {
+            System.Windows.Forms.Button button_Xoa = (System.Windows.Forms.Button)sender;
+            button_Xoa.BackColor = System.Drawing.Color.White;
+        }
+
+        private void button_Xoa_MouseLeave(object sender, EventArgs e)
+        {
+            System.Windows.Forms.Button button_Xoa = (System.Windows.Forms.Button)sender;
+            button_Xoa.BackColor = System.Drawing.Color.Red;
+        }
     }
 }
