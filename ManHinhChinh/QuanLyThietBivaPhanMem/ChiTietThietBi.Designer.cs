@@ -129,11 +129,11 @@
             // 
             // txt_matb
             // 
-            txt_matb.Location = new Point(232, 39);
+            txt_matb.Location = new Point(232, 40);
             txt_matb.Margin = new Padding(3, 4, 3, 4);
             txt_matb.Multiline = true;
             txt_matb.Name = "txt_matb";
-            txt_matb.Size = new Size(137, 40);
+            txt_matb.Size = new Size(137, 30);
             txt_matb.TabIndex = 19;
             txt_matb.Text = " ";
             // 
@@ -165,8 +165,8 @@
             // cb_tinhtrang
             // 
             cb_tinhtrang.FormattingEnabled = true;
-            cb_tinhtrang.Items.AddRange(new object[] { "Hoạt động", "Bảo trì", "Sữa chửa" });
-            cb_tinhtrang.Location = new Point(231, 188);
+            cb_tinhtrang.Items.AddRange(new object[] { "Hoạt động", "Bảo trì", "Sửa chữa" });
+            cb_tinhtrang.Location = new Point(232, 152);
             cb_tinhtrang.Margin = new Padding(3, 4, 3, 4);
             cb_tinhtrang.Name = "cb_tinhtrang";
             cb_tinhtrang.Size = new Size(138, 28);
@@ -174,20 +174,20 @@
             // 
             // txt_maphong
             // 
-            txt_maphong.Location = new Point(232, 137);
+            txt_maphong.Location = new Point(233, 119);
             txt_maphong.Margin = new Padding(3, 4, 3, 4);
             txt_maphong.Multiline = true;
             txt_maphong.Name = "txt_maphong";
-            txt_maphong.Size = new Size(137, 40);
+            txt_maphong.Size = new Size(137, 31);
             txt_maphong.TabIndex = 11;
             // 
             // txt_tentb
             // 
-            txt_tentb.Location = new Point(232, 88);
+            txt_tentb.Location = new Point(232, 78);
             txt_tentb.Margin = new Padding(3, 4, 3, 4);
             txt_tentb.Multiline = true;
             txt_tentb.Name = "txt_tentb";
-            txt_tentb.Size = new Size(137, 40);
+            txt_tentb.Size = new Size(137, 33);
             txt_tentb.TabIndex = 10;
             // 
             // btn_edit
@@ -257,7 +257,7 @@
             // 
             lbl_tinhtrang.AutoSize = true;
             lbl_tinhtrang.ForeColor = SystemColors.ActiveCaptionText;
-            lbl_tinhtrang.Location = new Point(6, 192);
+            lbl_tinhtrang.Location = new Point(7, 160);
             lbl_tinhtrang.Name = "lbl_tinhtrang";
             lbl_tinhtrang.Size = new Size(76, 20);
             lbl_tinhtrang.TabIndex = 3;
@@ -267,7 +267,7 @@
             // 
             lbl_idphong.AutoSize = true;
             lbl_idphong.ForeColor = SystemColors.ActiveCaptionText;
-            lbl_idphong.Location = new Point(7, 147);
+            lbl_idphong.Location = new Point(7, 130);
             lbl_idphong.Name = "lbl_idphong";
             lbl_idphong.Size = new Size(105, 20);
             lbl_idphong.TabIndex = 2;
@@ -277,7 +277,7 @@
             // 
             lbl_name.AutoSize = true;
             lbl_name.ForeColor = SystemColors.ActiveCaptionText;
-            lbl_name.Location = new Point(7, 101);
+            lbl_name.Location = new Point(7, 91);
             lbl_name.Name = "lbl_name";
             lbl_name.Size = new Size(83, 20);
             lbl_name.TabIndex = 1;

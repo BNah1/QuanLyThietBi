@@ -215,7 +215,9 @@
         private void btn_add_Click(object sender, EventArgs e)
         {
             GetValuesTextBoxes();
-            string query = "INSERT INTO ThietBi Values ('" + quanLy.MaThietBi + "', N'" + quanLy.TenThietBi + "', '" + quanLy.MaPhongHoc + "', N'" + quanLy.TinhTrang + "', '" + quanLy.NgayCapNhatNV + "', N'" + quanLy.ThongBao + "', '" + quanLy.NgayCapNhatGV + "')";
+            string query = "INSERT INTO ThietBi VALUES ('" + quanLy.MaThietBi + "', N'" + quanLy.TenThietBi + "', '" + quanLy.MaPhongHoc + "', N'" + quanLy.TinhTrang + "', '" + quanLy.NgayCapNhatNV + "', N'" + quanLy.ThongBao + "', '" + quanLy.NgayCapNhatGV + "'); " +
+               "INSERT INTO MayTinh (MaThietBi, Window, PhanCung1, PhanCung2, PhanCung3) " +
+               "VALUES ('" + quanLy.MaThietBi + "', NULL, NULL, NULL, NULL);";
             try
             {
                 modify.Command(query);

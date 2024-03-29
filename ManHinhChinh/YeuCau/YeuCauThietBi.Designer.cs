@@ -132,10 +132,10 @@ namespace WindowsFormsApp11
             // 
             // txtCountDG
             // 
-            txtCountDG.Location = new Point(287, 453);
+            txtCountDG.Location = new Point(317, 455);
             txtCountDG.Margin = new Padding(5, 4, 5, 4);
             txtCountDG.Name = "txtCountDG";
-            txtCountDG.Size = new Size(30, 38);
+            txtCountDG.Size = new Size(31, 38);
             txtCountDG.TabIndex = 24;
             // 
             // label10
@@ -153,8 +153,8 @@ namespace WindowsFormsApp11
             // 
             cbThietBi.Font = new Font("Times New Roman", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             cbThietBi.FormattingEnabled = true;
-            cbThietBi.Items.AddRange(new object[] { "Máy tính", "Máy chiếu", "Micro", "Maý lạnh" });
-            cbThietBi.Location = new Point(306, 76);
+            cbThietBi.Items.AddRange(new object[] { "Máy tính", "Máy chiếu", "Micro", "Máy lạnh" });
+            cbThietBi.Location = new Point(417, 79);
             cbThietBi.Margin = new Padding(5, 4, 5, 4);
             cbThietBi.Name = "cbThietBi";
             cbThietBi.Size = new Size(137, 35);
@@ -257,10 +257,10 @@ namespace WindowsFormsApp11
             cbWin.Font = new Font("Times New Roman", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             cbWin.FormattingEnabled = true;
             cbWin.Items.AddRange(new object[] { "Window 10", "Window 11", "Window 12", "N/A" });
-            cbWin.Location = new Point(727, 129);
+            cbWin.Location = new Point(736, 129);
             cbWin.Margin = new Padding(5, 4, 5, 4);
             cbWin.Name = "cbWin";
-            cbWin.Size = new Size(70, 35);
+            cbWin.Size = new Size(141, 35);
             cbWin.TabIndex = 4;
             // 
             // cbCPU
@@ -278,7 +278,7 @@ namespace WindowsFormsApp11
             // 
             label8.AutoSize = true;
             label8.Font = new Font("Times New Roman", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label8.Location = new Point(409, 136);
+            label8.Location = new Point(394, 136);
             label8.Margin = new Padding(5, 0, 5, 0);
             label8.Name = "label8";
             label8.Size = new Size(98, 31);
@@ -289,7 +289,7 @@ namespace WindowsFormsApp11
             // 
             label7.AutoSize = true;
             label7.Font = new Font("Times New Roman", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label7.Location = new Point(193, 136);
+            label7.Location = new Point(185, 136);
             label7.Margin = new Padding(5, 0, 5, 0);
             label7.Name = "label7";
             label7.Size = new Size(78, 31);
@@ -311,7 +311,7 @@ namespace WindowsFormsApp11
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Times New Roman", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label4.Location = new Point(623, 136);
+            label4.Location = new Point(628, 133);
             label4.Margin = new Padding(5, 0, 5, 0);
             label4.Name = "label4";
             label4.Size = new Size(113, 31);
@@ -322,7 +322,7 @@ namespace WindowsFormsApp11
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Times New Roman", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.Location = new Point(453, 83);
+            label3.Location = new Point(555, 83);
             label3.Margin = new Padding(5, 0, 5, 0);
             label3.Name = "label3";
             label3.Size = new Size(138, 31);
@@ -337,17 +337,17 @@ namespace WindowsFormsApp11
             cbRam.Location = new Point(270, 129);
             cbRam.Margin = new Padding(5, 4, 5, 4);
             cbRam.Name = "cbRam";
-            cbRam.Size = new Size(132, 35);
+            cbRam.Size = new Size(114, 35);
             cbRam.TabIndex = 6;
             // 
             // cbPhanmem
             // 
             cbPhanmem.Font = new Font("Times New Roman", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             cbPhanmem.FormattingEnabled = true;
-            cbPhanmem.Location = new Point(578, 76);
+            cbPhanmem.Location = new Point(695, 79);
             cbPhanmem.Margin = new Padding(5, 4, 5, 4);
             cbPhanmem.Name = "cbPhanmem";
-            cbPhanmem.Size = new Size(166, 35);
+            cbPhanmem.Size = new Size(188, 35);
             cbPhanmem.TabIndex = 3;
             // 
             // cbPhong
@@ -355,17 +355,17 @@ namespace WindowsFormsApp11
             cbPhong.Font = new Font("Times New Roman", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             cbPhong.FormattingEnabled = true;
             cbPhong.ItemHeight = 27;
-            cbPhong.Location = new Point(90, 76);
+            cbPhong.Location = new Point(104, 79);
             cbPhong.Margin = new Padding(5, 4, 5, 4);
             cbPhong.Name = "cbPhong";
-            cbPhong.Size = new Size(71, 35);
+            cbPhong.Size = new Size(153, 35);
             cbPhong.TabIndex = 1;
             // 
             // label2
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Times New Roman", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(171, 83);
+            label2.Location = new Point(267, 83);
             label2.Margin = new Padding(5, 0, 5, 0);
             label2.Name = "label2";
             label2.Size = new Size(149, 31);
@@ -377,10 +377,10 @@ namespace WindowsFormsApp11
             cbOCung.Font = new Font("Times New Roman", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             cbOCung.FormattingEnabled = true;
             cbOCung.Items.AddRange(new object[] { "128GB", "256GB", "512GB", "1024GB", ">1024GB", "N/A" });
-            cbOCung.Location = new Point(505, 129);
+            cbOCung.Location = new Point(502, 129);
             cbOCung.Margin = new Padding(5, 4, 5, 4);
             cbOCung.Name = "cbOCung";
-            cbOCung.Size = new Size(108, 35);
+            cbOCung.Size = new Size(116, 35);
             cbOCung.TabIndex = 7;
             // 
             // label1

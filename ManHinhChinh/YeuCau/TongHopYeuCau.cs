@@ -89,16 +89,11 @@ namespace WindowsFormsApp7
                             string maYeuCau = selectedRow.Cells["Mã yêu cầu"].Value.ToString();
                             command.Parameters.AddWithValue("@MaYeuCau", maYeuCau);
 
-
                             command.ExecuteNonQuery();
-
-
                             string maThietBi = selectedRow.Cells["Mã yêu cầu"].Value.ToString();
                             string tenThietBi = selectedRow.Cells["Tên thiết bị"].Value.ToString();
                             string maPhongHoc = selectedRow.Cells["Mã phòng học"].Value.ToString();
                             DateTime ngayTaoYeuCau = Convert.ToDateTime(selectedRow.Cells["Ngày tạo yêu cầu"].Value);
-
-
                             string insertQuery = "INSERT INTO ThietBi (MaThietBi, TenThietBi, MaPhongHoc, TinhTrang, NgayCapNhatNhanVien) VALUES (@MaThietBi, @TenThietBi, @MaPhongHoc, @TinhTrang,@ngayTaoYeuCau)";
                             SqlCommand insertCommand = new SqlCommand(insertQuery, connection);
                             insertCommand.Parameters.AddWithValue("@MaThietBi", maThietBi);
@@ -146,7 +141,7 @@ namespace WindowsFormsApp7
             {
                 DataGridViewRow selectedRow = dgv1.SelectedRows[0];
                 string tinhtrang = selectedRow.Cells["Tình trạng"].Value.ToString();
-                if (tinhtrang == "Đã duyệt")
+                if (tinhtrang == "Đã duyệt" || tinhtrang == "Chờ xử lý")
                 {
                     try
                     {
@@ -188,7 +183,7 @@ namespace WindowsFormsApp7
                         MessageBox.Show("Lỗi: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
-                else if (tinhtrang == "Hoàn thành" || tinhtrang == "Đã hủy yêu cầu" || tinhtrang == "Chờ xử lý")
+                else if (tinhtrang == "Hoàn thành" || tinhtrang == "Đã hủy yêu cầu" )
                 {
                     MessageBox.Show("Không thể từ chối yêu cầu đã hoàn thành hoặc đã bị hủy hoặc đang chờ xử lý.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
